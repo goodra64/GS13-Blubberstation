@@ -145,6 +145,7 @@ export const eye_emissives: FeatureToggle = {
 export const mutant_colors_color: Feature<string[]> = {
   name: 'Body Colors',  // GS13 EDIT changes mutant colors name to body colors
   component: FeatureTriColorInput,
+  description: 'Body color used for non-human species.',
 };
 
 export const body_markings_toggle: FeatureToggle = {

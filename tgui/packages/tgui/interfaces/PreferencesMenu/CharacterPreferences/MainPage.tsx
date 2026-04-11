@@ -10,6 +10,7 @@ import {
   Floating,
   Input,
   LabeledList,
+  NoticeBox,
   Section,
   Stack,
 } from 'tgui-core/components';
@@ -497,6 +498,16 @@ export function MainPage(props: MainPageProps) {
   const contextualPreferences =
     data.character_preferences.secondary_features || [];
 
+  // BUBBER EDIT ADDITION BEGIN: more character setup tabs
+  const characterBasicsPreferences =
+    data.character_preferences.character_basics || [];
+
+  const oocPrefPreferences = data.character_preferences.ooc_preferences || [];
+
+  const siliconPreferences =
+    data.character_preferences.silicon_preferences || [];
+  // BUBBER EDIT ADDITION END: more character setup tabs
+
   const mainFeatures = [
     ...Object.entries(data.character_preferences.clothing ?? {}),
     ...Object.entries(data.character_preferences.features ?? {}),
@@ -542,19 +553,35 @@ export function MainPage(props: MainPageProps) {
 
   // BUBBER EDIT ADDITION BEGIN: SWAPPABLE PREF MENUS
   enum PrefPage {
+    CharBasics, // Character basics
     Visual, // The visual parts
     Lore, // Lore, Flavor Text, Age, Records
+    OOCPref, // OOC preferences
+    Silicon, // Silicon prefs
     WGprefs, // GS13 EDIT prefs
     GSExaminePrefs, // GS13 EDIT prefs
   }
 
-  const [currentPrefPage, setCurrentPrefPage] = useState(PrefPage.Visual);
+  const [currentPrefPage, setCurrentPrefPage] = useState(PrefPage.CharBasics);
 
   let prefPageContents;
   let BFI_stages; // GS13 EDIT
   let helplessness_contents; // GS13 EDIT
   let blueberry_contents; // GS13 EDIT
   switch (currentPrefPage) {
+    case PrefPage.CharBasics:
+      prefPageContents = (
+        <PreferenceList
+          randomizations={getRandomization(
+            characterBasicsPreferences,
+            serverData,
+            randomBodyEnabled,
+          )}
+          preferences={characterBasicsPreferences}
+          maxHeight="auto"
+        />
+      );
+      break;
     case PrefPage.Visual:
       prefPageContents = (
         <PreferenceList
@@ -581,6 +608,38 @@ export function MainPage(props: MainPageProps) {
         />
       );
       break;
+    case PrefPage.OOCPref:
+      prefPageContents = (
+        <PreferenceList
+          randomizations={getRandomization(
+            oocPrefPreferences,
+            serverData,
+            randomBodyEnabled,
+          )}
+          preferences={oocPrefPreferences}
+          maxHeight="auto"
+        />
+      );
+      break;
+    case PrefPage.Silicon:
+      prefPageContents = (
+        <>
+          <NoticeBox info>
+            This tab is for preferences that only apply when playing the AI or
+            Cyborg jobs!
+          </NoticeBox>
+          <PreferenceList
+            randomizations={getRandomization(
+              siliconPreferences,
+              serverData,
+              randomBodyEnabled,
+            )}
+            preferences={siliconPreferences}
+            maxHeight="auto"
+          />
+        </>
+      );
+      break;
     // GS13 EDIT
     case PrefPage.WGprefs:
       prefPageContents = (
@@ -588,9 +647,9 @@ export function MainPage(props: MainPageProps) {
         <b>Weight gain preferences</b>
         <Divider />
         <BlockQuote>
-          These preferences will allow you to customize the ways in which you 
-          gain weight, as well as the speed at which you gain/lose it. Here 
-          you can also control whether you want to participate in more extreme 
+          These preferences will allow you to customize the ways in which you
+          gain weight, as well as the speed at which you gain/lose it. Here
+          you can also control whether you want to participate in more extreme
           aspects of gaining weight.
         </BlockQuote>
         <PreferenceList
@@ -650,7 +709,7 @@ export function MainPage(props: MainPageProps) {
         <b>Blueberry preferences</b>
         <Divider />
         <BlockQuote>
-          These preferences will allow you to customize whether and how 
+          These preferences will allow you to customize whether and how
           blueberry inflation mechanics will affect you.
         </BlockQuote>
         <PreferenceList
@@ -669,9 +728,9 @@ export function MainPage(props: MainPageProps) {
       prefPageContents = (
         <Section>
         <BlockQuote>
-          These preferences will allow you to customize the various flavor 
-          texts displayed upon examination depending on your weight/muscle 
-          stage. These can be at most 300 characters long. Leaving them blank 
+          These preferences will allow you to customize the various flavor
+          texts displayed upon examination depending on your weight/muscle
+          stage. These can be at most 300 characters long. Leaving them blank
           will make you use the default flavor texts.
         </BlockQuote>
         <PreferenceList
@@ -832,6 +891,15 @@ export function MainPage(props: MainPageProps) {
               <Stack.Item grow={2}>
                 <PageButton
                   currentPage={currentPrefPage}
+                  page={PrefPage.CharBasics}
+                  setPage={setCurrentPrefPage}
+                >
+                  Character Basics
+                </PageButton>
+              </Stack.Item>
+              <Stack.Item grow={2}>
+                <PageButton
+                  currentPage={currentPrefPage}
                   page={PrefPage.Visual}
                   setPage={setCurrentPrefPage}
                 >
@@ -845,6 +913,24 @@ export function MainPage(props: MainPageProps) {
                   setPage={setCurrentPrefPage}
                 >
                   Character Lore
+                </PageButton>
+              </Stack.Item>
+              <Stack.Item grow={2}>
+                <PageButton
+                  currentPage={currentPrefPage}
+                  page={PrefPage.OOCPref}
+                  setPage={setCurrentPrefPage}
+                >
+                  OOC Preferences
+                </PageButton>
+              </Stack.Item>
+              <Stack.Item grow={2}>
+                <PageButton
+                  currentPage={currentPrefPage}
+                  page={PrefPage.Silicon}
+                  setPage={setCurrentPrefPage}
+                >
+                  Silicon Preferences
                 </PageButton>
               </Stack.Item>
               {/* GS13 EDIT */}
