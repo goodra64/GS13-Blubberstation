@@ -70607,7 +70607,7 @@
 /turf/open/floor/iron/freezer,
 /area/station/commons/dorms/room4)
 "nvg" = (
-/obj/item/stack/sheet/animalhide/human,
+/obj/item/stack/sheet/animalhide/carbon/human,
 /turf/open/floor/plating,
 /area/station/maintenance/department/science/xenobiology)
 "nvh" = (
@@ -101827,7 +101827,7 @@
 /turf/open/floor/iron/freezer,
 /area/station/command/heads_quarters/cmo)
 "tkV" = (
-/obj/item/stack/sheet/animalhide/human,
+/obj/item/stack/sheet/animalhide/carbon/human,
 /turf/open/floor/material/meat,
 /area/station/maintenance/department/science/xenobiology)
 "tkX" = (

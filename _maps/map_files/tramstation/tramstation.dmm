@@ -59771,7 +59771,7 @@
 	pixel_x = -7;
 	pixel_y = 7
 	},
-/obj/item/infuser_book{
+/obj/item/tgui_book/manual/infuser{
 	pixel_x = 5;
 	pixel_y = 3
 	},

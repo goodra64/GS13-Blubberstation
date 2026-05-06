@@ -34,14 +34,16 @@ type ckeyProp = {
 
 const ItemEntry = (item: item) => {
     return(
-        item.name + ", x" + item.amount + ", "
+        // item.name + ", x" + item.amount + ", "
+        `${item.name}, x${item.amount}, `
     );
 };
 
 const CkeyList = (ckeyProp: ckeyProp) => {
     const { ckey } = ckeyProp;
     return(
-        ckey + ", "
+        // ckey + ", "
+        `${ckey}, `
     );
 };
 
