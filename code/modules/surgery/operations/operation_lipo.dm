@@ -77,7 +77,7 @@
 	limb.owner.set_nutrition(NUTRITION_LEVEL_WELL_FED)
 	removednutriment -= NUTRITION_LEVEL_WELL_FED //whatever was removed goes into the meat
 	*/
-	var/removed_fat = target.adjust_fatness(-FATNESS_LEVEL_FATTER, FATTENING_TYPE_WEIGHT_LOSS, TRUE)
+	var/removed_fat = limb.owner.adjust_fatness(-FATNESS_LEVEL_FATTER, FATTENING_TYPE_WEIGHT_LOSS, TRUE)
 	if(removed_fat < FATNESS_LEVEL_FATTER)
 		return ..()
 	// GS13 END EDIT

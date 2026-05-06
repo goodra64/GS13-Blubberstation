@@ -1,5 +1,3 @@
-///IV drip operation mode when it sucks blood from the object
-#define IV_TAKING 0
 ///Minimum possible IV drip transfer rate in units per second
 #define MIN_IV_TRANSFER_RATE 0
 ///Maximum possible IV drip transfer rate in units per second
@@ -16,7 +14,7 @@
 		return COMPONENT_INCOMPATIBLE
 
 	reagents = parent_movable.reagents
-	set_recipient_reagents_holder(custom_receiver ? custom_receiver : parent_movable.reagents)
+	// set_recipient_reagents_holder(custom_receiver ? custom_receiver : parent_movable.reagents)
 
 	if(start)
 		enable()
@@ -58,7 +56,7 @@
 		return FALSE
 
 	var/obj/machinery/iv_drip/plumbing/drip = parent
-	drip.reagents.trans_to(target.recipient_reagents_holder, amount, target_id = reagent, methods = INGEST)
+	drip.reagents.trans_to(target.recipient_reagents_holder(), amount, target_id = reagent, methods = INGEST)
 
 /obj/machinery/iv_drip/gs13
 	icon = 'modular_gs/icons/obj/plumping.dmi'
@@ -176,7 +174,8 @@
 /obj/machinery/iv_drip/gs13/plumbing_feeder/Initialize(mapload, bolt, layer)
 	. = ..()
 	AddComponent(/datum/component/plumbing/automated_iv/gs13/feeder, bolt, layer)
-	AddComponent(/datum/component/simple_rotation)
+	// AddComponent(/datum/component/simple_rotation)
+	AddElement(/datum/element/simple_rotation)
 
 /obj/machinery/iv_drip/gs13/plumbing_feeder/process(seconds_per_tick)
 	if(!attachment)
@@ -213,7 +212,8 @@
 /obj/machinery/iv_drip/gs13/plumbing_milker/Initialize(mapload, bolt, layer)
 	. = ..()
 	AddComponent(/datum/component/plumbing/automated_iv/gs13/milker, bolt, layer)
-	AddComponent(/datum/component/simple_rotation)
+	// AddComponent(/datum/component/simple_rotation)
+	AddElement(/datum/element/simple_rotation)
 
 /obj/machinery/iv_drip/gs13/plumbing_milker/get_reagents()
 	return reagents
