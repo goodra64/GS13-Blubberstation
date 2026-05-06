@@ -3,7 +3,6 @@ import { Section, Table, Stack, Tooltip, Box, Button, } from 'tgui-core/componen
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
-import type {JSX} from 'react'
 
 type Data = {
     available_perks: Perk[];

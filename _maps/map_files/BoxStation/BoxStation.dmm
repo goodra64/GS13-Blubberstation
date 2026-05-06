@@ -36944,7 +36944,7 @@
 	},
 /obj/item/toy/toy_dagger{
 	desc = "A skeletal limb wrapped in pseudomuscles, with a low-conductivity case. Display only.";
-	icon = 'modular_skyrat/master_files/icons/mob/augmentation/mcgipc.dmi';
+	icon = 'modular_zubbers/icons/mob/augmentation/mcgipc.dmi';
 	icon_state = "robotic_l_arm";
 	name = "salvaged prosthesis";
 	pixel_x = -6;
@@ -36955,7 +36955,7 @@
 	},
 /obj/item/toy/toy_dagger{
 	desc = "A skeletal limb wrapped in pseudomuscles, with a low-conductivity case. Display only.";
-	icon = 'modular_skyrat/master_files/icons/mob/augmentation/mcgipc.dmi';
+	icon = 'modular_zubbers/icons/mob/augmentation/mcgipc.dmi';
 	icon_state = "robotic_chest";
 	name = "salvaged prosthesis";
 	pixel_x = 11;
