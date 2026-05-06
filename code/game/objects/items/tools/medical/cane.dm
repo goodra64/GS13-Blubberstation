@@ -13,10 +13,15 @@
 	custom_materials = list(/datum/material/iron= SMALL_MATERIAL_AMOUNT * 0.5)
 	attack_verb_continuous = list("bludgeons", "whacks", "disciplines", "thrashes")
 	attack_verb_simple = list("bludgeon", "whack", "discipline", "thrash")
+	//GS13 EDIT
+	var/fatness_slowdown_reduction = -1
+	//GS13 EDIT END
 
 /obj/item/cane/examine(mob/user, thats)
 	. = ..()
-	. += span_notice("This item can be used to support your weight, preventing limping from any broken bones on your legs you may have.")
+	//GS13 EDIT
+	. += span_notice("This item can be used to support your weight, preventing limping from any broken bones on your legs you may have, as well as assisting your movement while fat.")
+	//GS13 EDIT END
 
 /obj/item/cane/equipped(mob/living/user, slot, initial)
 	..()
@@ -30,10 +35,20 @@
 
 /obj/item/cane/proc/movement_support_add(mob/living/user)
 	RegisterSignal(user, COMSIG_CARBON_LIMPING, PROC_REF(handle_limping))
+	//GS13 EDIT
+	var/mob/living/carbon/fatty = user
+	if(istype(fatty))
+		fatty.add_fat_delay_modifier("cane", fatness_slowdown_reduction)
+	//GS13 EDIT END
 	return TRUE
 
 /obj/item/cane/proc/movement_support_del(mob/living/user)
 	UnregisterSignal(user, list(COMSIG_CARBON_LIMPING))
+	//GS13 EDIT
+	var/mob/living/carbon/fatty = user
+	if(istype(fatty))
+		fatty.remove_fat_delay_modifier("cane")
+	//GS13 EDIT END
 	return TRUE
 
 /obj/item/cane/proc/handle_limping(mob/living/user)
@@ -55,6 +70,9 @@
 	custom_materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT * 0.5)
 	attack_verb_continuous = list("bludgeons", "whacks", "thrashes")
 	attack_verb_simple = list("bludgeon", "whack", "thrash")
+	//GS13 EDIT
+	fatness_slowdown_reduction = -2
+	//GS13 EDIT END
 
 /obj/item/cane/crutch/Initialize(mapload)
 	. = ..()

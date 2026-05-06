@@ -2,7 +2,8 @@
 	name = "excise excess fat"
 	rnd_name = "Lipoplasty (Excise Fat)"
 	desc = "Remove excess fat from a patient's body."
-	operation_flags = OPERATION_NOTABLE | OPERATION_AFFECTS_MOOD
+	// operation_flags = OPERATION_NOTABLE | OPERATION_AFFECTS_MOOD	// GS13 EDIT
+	operation_flags = OPERATION_NOTABLE | OPERATION_AFFECTS_MOOD | OPERATION_LOOPING // GS13 EDIT
 	implements = list(
 		TOOL_SAW = 1,
 		TOOL_SCALPEL = 1.25,
@@ -12,7 +13,7 @@
 		/obj/item/knife = 3.33,
 		/obj/item = 5,
 	)
-	time = 6.4 SECONDS
+	// time = 3.2 SECONDS	// GS13 edit, original: 6.4 seconds
 	required_bodytype = (~BODYTYPE_ROBOTIC & ~BODYTYPE_SYNTHETIC) // NOVA EDIT CHANGE - SYNTH FLAGS  -Orginal: required_bodytype = ~BODYTYPE_ROBOTIC
 	preop_sound = list(
 		/obj/item/circular_saw = 'sound/items/handling/surgery/saw.ogg',
@@ -43,8 +44,13 @@
 		return FALSE
 	if(HAS_TRAIT(limb.owner, TRAIT_NOHUNGER))
 		return FALSE
+	/* GS13 EDIT reworks lipoplasty for our fat system
 	if(!HAS_TRAIT_FROM(limb.owner, TRAIT_FAT, OBESITY) || limb.owner.nutrition < NUTRITION_LEVEL_WELL_FED)
 		return FALSE
+	*/
+	if(limb.owner.fatness_real <= FATNESS_LEVEL_FATTER || HAS_TRAIT(limb.owner, TRAIT_WEIGHT_LOSS_IMMUNE))
+		return FALSE
+	// GS13 END EDIT
 	return TRUE
 
 /datum/surgery_operation/limb/lipoplasty/on_preop(obj/item/bodypart/limb, mob/living/surgeon, obj/item/tool, list/operation_args)
@@ -65,10 +71,16 @@
 		span_notice("[surgeon] successfully removes excess fat from [limb.owner]'s body!"),
 		span_notice("[surgeon] finishes cutting away excess fat from [limb.owner]'s [limb.plaintext_zone]."),
 	)
+	/* GS13 EDIT
 	var/removednutriment = limb.owner.nutrition
 	limb.owner.overeatduration = 0 //patient is unfatted
 	limb.owner.set_nutrition(NUTRITION_LEVEL_WELL_FED)
 	removednutriment -= NUTRITION_LEVEL_WELL_FED //whatever was removed goes into the meat
+	*/
+	var/removed_fat = target.adjust_fatness(-FATNESS_LEVEL_FATTER, FATTENING_TYPE_WEIGHT_LOSS, TRUE)
+	if(removed_fat < FATNESS_LEVEL_FATTER)
+		return ..()
+	// GS13 END EDIT
 
 	if(limb.owner.flags_1 & HOLOGRAM_1)
 		return
@@ -87,7 +99,7 @@
 	newmeat.desc = "Extremely fatty tissue taken from a patient."
 	newmeat.subjectname = limb.owner.real_name
 	newmeat.subjectjob = limb.owner.job
-	newmeat.reagents.add_reagent(/datum/reagent/consumable/nutriment, (removednutriment / /datum/reagent/consumable/nutriment::nutriment_factor))
+	// newmeat.reagents.add_reagent(/datum/reagent/consumable/nutriment, (removednutriment / /datum/reagent/consumable/nutriment::nutriment_factor)) // GS13 EDIT
 
 /datum/surgery_operation/limb/lipoplasty/mechanic
 	name = "engage expulsion valve" //gross
