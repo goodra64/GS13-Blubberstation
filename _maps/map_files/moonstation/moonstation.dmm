@@ -1009,7 +1009,7 @@
 /area/station/command/heads_quarters/cmo)
 "anA" = (
 /obj/structure/table,
-/obj/item/computer_disk/ordnance,
+/obj/item/disk/computer/ordnance,
 /obj/item/pai_card,
 /obj/item/toy/figure/rd,
 /obj/effect/turf_decal/tile/purple/half/contrasted{
@@ -2448,7 +2448,7 @@
 /obj/machinery/modular_computer/preset/id{
 	dir = 4
 	},
-/obj/item/computer_disk/quartermaster,
+/obj/item/disk/computer/quartermaster,
 /obj/machinery/keycard_auth/wall_mounted/directional/south,
 /turf/open/floor/mineral/gold,
 /area/station/command/heads_quarters/qm)
@@ -16114,7 +16114,7 @@
 	dir = 8
 	},
 /obj/structure/table,
-/obj/item/computer_disk/ordnance,
+/obj/item/disk/computer/ordnance,
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance)
 "esm" = (
@@ -34929,7 +34929,7 @@
 /obj/effect/turf_decal/tile/neutral/opposingcorners{
 	dir = 1
 	},
-/obj/item/computer_disk/ordnance,
+/obj/item/disk/computer/ordnance,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/rd)
 "jsf" = (
@@ -59131,7 +59131,7 @@
 	dir = 1
 	},
 /obj/machinery/modular_computer/preset/cargochat/security,
-/obj/item/computer_disk/security,
+/obj/item/disk/computer/security,
 /turf/open/floor/iron/dark,
 /area/station/security/office)
 "pND" = (
@@ -61411,11 +61411,11 @@
 "qsl" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/table,
-/obj/item/computer_disk,
-/obj/item/computer_disk{
+/obj/item/disk/computer,
+/obj/item/disk/computer{
 	pixel_y = 3
 	},
-/obj/item/computer_disk{
+/obj/item/disk/computer{
 	pixel_y = 6
 	},
 /obj/effect/turf_decal/tile/purple/half/contrasted{
