@@ -16,6 +16,8 @@
 	reagents = parent_movable.reagents
 	// set_recipient_reagents_holder(custom_receiver ? custom_receiver : parent_movable.reagents)
 
+	ducts = list()
+	
 	if(start)
 		enable()
 	if(!istype(parent, /obj/machinery/iv_drip/gs13))
