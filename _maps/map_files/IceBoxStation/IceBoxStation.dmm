@@ -34851,7 +34851,7 @@
 /area/station/maintenance/space_hut/cabin)
 "jBc" = (
 /obj/machinery/dna_infuser,
-/obj/item/infuser_book,
+/obj/item/tgui_book/manual/infuser,
 /obj/machinery/light/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/science/genetics)

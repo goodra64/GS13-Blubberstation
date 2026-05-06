@@ -34336,7 +34336,7 @@
 /area/station/engineering/atmos/hfr_room)
 "jkC" = (
 /obj/machinery/dna_infuser,
-/obj/item/infuser_book,
+/obj/item/tgui_book/manual/infuser,
 /obj/effect/turf_decal/tile/purple/half/contrasted,
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/iron/white,

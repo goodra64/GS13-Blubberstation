@@ -39490,7 +39490,7 @@
 /obj/machinery/computer/records/medical/laptop{
 	pixel_y = 1
 	},
-/obj/item/infuser_book{
+/obj/item/tgui_book/manual/infuser{
 	pixel_x = -18
 	},
 /turf/open/floor/iron/dark,

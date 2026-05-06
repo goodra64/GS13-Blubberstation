@@ -64128,7 +64128,7 @@
 	dir = 1;
 	pixel_x = -4
 	},
-/obj/item/infuser_book{
+/obj/item/tgui_book/manual/infuser{
 	pixel_y = -1;
 	pixel_x = 9
 	},
