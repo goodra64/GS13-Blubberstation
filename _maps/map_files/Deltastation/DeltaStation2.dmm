@@ -31385,18 +31385,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/commons/storage/tools)
-<<<<<<< HEAD
-"hJn" = (
-/obj/structure/extinguisher_cabinet/directional/north,
-/obj/item/stack/medical/gauze,
-/obj/item/stack/medical/suture,
-/obj/machinery/camera/autoname/medbay/directional/north,
-/obj/structure/table/reinforced/rglass,
-/obj/effect/turf_decal/tile/blue/fourcorners,
-/turf/open/floor/iron,
-/area/station/medical/treatment_center)
-=======
->>>>>>> bubber/master
 "hJo" = (
 /obj/structure/table/wood,
 /obj/item/folder/white{
@@ -44447,16 +44435,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/cmo)
-<<<<<<< HEAD
-"kUx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/station/engineering/hallway)
-=======
->>>>>>> bubber/master
 "kUC" = (
 /obj/structure/table/wood,
 /obj/machinery/newscaster/directional/south,
@@ -46461,13 +46439,8 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-<<<<<<< HEAD
-/obj/effect/spawner/random/structure/barricade,
-/obj/effect/mapping_helpers/airlock/unres{
-=======
 /obj/effect/spawner/random/structure/barricade/crude,
 /obj/effect/mapping_helpers/airlock/unres/delayed{
->>>>>>> bubber/master
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
@@ -52925,13 +52898,8 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-<<<<<<< HEAD
-/obj/effect/spawner/random/structure/barricade,
-/obj/effect/mapping_helpers/airlock/unres{
-=======
 /obj/effect/spawner/random/structure/barricade/crude,
 /obj/effect/mapping_helpers/airlock/unres/delayed{
->>>>>>> bubber/master
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
@@ -59705,13 +59673,6 @@
 /obj/structure/closet/crate/internals,
 /turf/open/floor/plating,
 /area/station/maintenance/department/eva/abandoned)
-<<<<<<< HEAD
-"oMh" = (
-/obj/effect/turf_decal/tile/blue,
-/turf/open/floor/iron,
-/area/station/engineering/hallway)
-=======
->>>>>>> bubber/master
 "oMo" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/random/bureaucracy/briefcase{
@@ -71428,18 +71389,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/security/processing)
-<<<<<<< HEAD
-"rGG" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/effect/turf_decal/stripes/line,
-/obj/machinery/atmospherics/components/tank/air/layer4{
-	dir = 4
-	},
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/iron/dark,
-/area/station/engineering/hallway)
-=======
->>>>>>> bubber/master
 "rGU" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -71560,13 +71509,8 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-<<<<<<< HEAD
-/obj/effect/spawner/random/structure/barricade,
-/obj/effect/mapping_helpers/airlock/unres{
-=======
 /obj/effect/spawner/random/structure/barricade/crude,
 /obj/effect/mapping_helpers/airlock/unres/delayed{
->>>>>>> bubber/master
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
@@ -84867,20 +84811,6 @@
 	},
 /turf/open/floor/iron/dark/corner,
 /area/station/maintenance/port)
-<<<<<<< HEAD
-"uPM" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/lattice/catwalk,
-/obj/machinery/atmospherics/pipe/smart/simple/orange/visible,
-/obj/structure/sign/nanotrasen{
-	pixel_x = 32
-	},
-/turf/open/space/basic,
-/area/space/nearstation)
-=======
->>>>>>> bubber/master
 "uPS" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/table/wood,
@@ -116506,17 +116436,6 @@ aaa
 aaa
 efQ
 qYo
-<<<<<<< HEAD
-wes
-gnH
-sXE
-gnH
-wFJ
-wFJ
-uPM
-wFJ
-wFJ
-=======
 uVO
 hJf
 wVY
@@ -116526,7 +116445,6 @@ ntt
 eJP
 hJf
 xuy
->>>>>>> bubber/master
 wFJ
 wFJ
 wFJ
@@ -118574,21 +118492,12 @@ pxN
 pxN
 pxN
 pxN
-<<<<<<< HEAD
-qYo
-xUy
-xqR
-qzc
-kUx
-kTV
-=======
 pNa
 wGy
 fum
 cpu
 ylG
 nUp
->>>>>>> bubber/master
 chv
 dQl
 oIE
@@ -119613,17 +119522,10 @@ xic
 pxN
 qYo
 xUy
-<<<<<<< HEAD
-xqR
-vTc
-oMh
-kTV
-=======
 ihW
 rAC
 kAH
 nUp
->>>>>>> bubber/master
 oow
 qzT
 nAF
