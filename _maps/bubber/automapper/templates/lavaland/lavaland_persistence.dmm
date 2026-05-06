@@ -2843,11 +2843,11 @@
 /obj/structure/cable,
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/modular_computer/laptop/preset/syndicate,
-/obj/item/computer_disk/ordnance,
+/obj/item/disk/computer/ordnance,
 /obj/item/pipe_dispenser{
 	pixel_x = -3
 	},
-/obj/item/computer_disk/ordnance,
+/obj/item/disk/computer/ordnance,
 /obj/item/book/manual/wiki/ordnance,
 /obj/machinery/light/directional/east,
 /obj/machinery/airalarm/directional/east,
@@ -6353,11 +6353,11 @@
 /obj/item/choice_beacon/music,
 /obj/item/binoculars,
 /obj/item/binoculars,
-/obj/item/computer_disk/syndicate/camera_app,
-/obj/item/computer_disk/syndicate/camera_app,
-/obj/item/computer_disk/syndicate/camera_app,
-/obj/item/computer_disk/syndicate/camera_app,
-/obj/item/computer_disk/syndicate/camera_app,
+/obj/item/disk/computer/syndicate/camera_app,
+/obj/item/disk/computer/syndicate/camera_app,
+/obj/item/disk/computer/syndicate/camera_app,
+/obj/item/disk/computer/syndicate/camera_app,
+/obj/item/disk/computer/syndicate/camera_app,
 /obj/item/disk{
 	desc = "A cheap, plastic hard-disk labelled 'good tunes to assault ops to'. It looks disused... wait, is that a 'THE WEAPONIZED' logo?";
 	icon_state = "nucleardisk";
@@ -8895,11 +8895,26 @@
 /obj/machinery/door/airlock/highsecurity{
 	name = "Brig Officer's Bitrunning Setup"
 	},
+<<<<<<< HEAD
 /obj/machinery/door/firedoor/heavy,
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bubbers/persistance/sec/prison)
+=======
+/obj/item/reagent_containers/cup/glass/coffee/colonial,
+/obj/item/reagent_containers/cup/glass/waterbottle/tea{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/item/disk/computer/ordnance{
+	pixel_x = 5;
+	pixel_y = 10
+	},
+/obj/machinery/light_switch/directional/east,
+/turf/open/floor/wood/parquet,
+/area/ruin/space/has_grav/bubbers/persistance/service/dorms/science)
+>>>>>>> bubber/master
 "rV" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -9041,11 +9056,16 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced/plastitaniumglass,
+<<<<<<< HEAD
 /obj/item/sequence_scanner{
 	pixel_x = 0;
 	pixel_y = 0
 	},
 /obj/item/infuser_book{
+=======
+/obj/item/sequence_scanner,
+/obj/item/tgui_book/manual/infuser{
+>>>>>>> bubber/master
 	pixel_x = -7;
 	pixel_y = 1
 	},
@@ -13305,6 +13325,23 @@
 	dir = 8
 	},
 /area/ruin/space/has_grav/bubbers/persistance/service/gym)
+"zZ" = (
+/obj/structure/cable,
+/obj/machinery/duct,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer4,
+/obj/machinery/firealarm/directional/west,
+/obj/machinery/button/door/directional/west{
+	pixel_y = 8;
+	specialfunctions = 4;
+	name = "Admiral Quarters Bolt Switch";
+	id = "syndishipmanager2";
+	req_access = list("syndicate");
+	normaldoorcontrol = 1
+	},
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/space/has_grav/bubbers/persistance/service)
 "Aa" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
@@ -28258,11 +28295,19 @@ qa
 qa
 pr
 vV
+<<<<<<< HEAD
 Mp
 pr
 nW
 HO
 tk
+=======
+uO
+zZ
+Oz
+Gt
+vI
+>>>>>>> bubber/master
 ul
 vG
 uT
