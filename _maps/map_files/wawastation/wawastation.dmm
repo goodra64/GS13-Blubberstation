@@ -11642,12 +11642,6 @@
 /obj/effect/mapping_helpers/requests_console/supplies,
 /turf/open/floor/iron/white,
 /area/station/medical/chemistry)
-"ebo" = (
-/obj/effect/landmark/start/paramedic,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/white,
-/area/station/medical/paramedic)
 "ebs" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/landmark/event_spawn,
@@ -25870,21 +25864,6 @@
 /obj/machinery/light/small/dim/directional/north,
 /turf/open/floor/iron/white/smooth_large,
 /area/station/science/research)
-"jaa" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/structure/sign/directions/command/directional/north,
-/obj/structure/sign/directions/engineering/directional/north{
-	dir = 4;
-	pixel_y = 40
-	},
-/obj/structure/sign/directions/security/directional/north{
-	dir = 8;
-	pixel_y = 24
-	},
-/turf/open/floor/iron,
-/area/station/hallway/primary/central)
 "jaf" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green,
@@ -27094,12 +27073,16 @@
 /turf/open/floor/carpet/purple,
 /area/station/service/library)
 "jvd" = (
-/obj/structure/cable,
-/obj/effect/landmark/start/paramedic,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/white,
-/area/station/medical/paramedic)
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/machinery/button/door/directional/west{
+	id = "maintbridge";
+	name = "Shutter Control";
+	pixel_y = 24
+	},
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
 "jvt" = (
 /obj/structure/closet/secure_closet/chemical,
 /obj/effect/turf_decal/stripes/line{
@@ -99195,8 +99178,8 @@ xDh
 juw
 pSO
 plo
-wfs
-kmu
+wdV
+jvd
 qbA
 tCE
 mJR
