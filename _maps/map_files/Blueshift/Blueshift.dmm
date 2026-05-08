@@ -24755,7 +24755,7 @@
 /area/station/command/gateway)
 "eHc" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating,
 /area/station/maintenance/abandon_diner)
 "eHi" = (
@@ -77539,7 +77539,7 @@
 /obj/machinery/door/airlock/grunge{
 	name = "Forbidden Chapel"
 	},
-/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
 /obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
 /turf/open/floor/iron/dark,
 /area/station/maintenance/cult_chapel_maint)
@@ -109583,7 +109583,7 @@
 /area/station/security/execution/education)
 "uJQ" = (
 /obj/machinery/door/airlock/hatch,
-/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/maintenance/department/science/lower)
@@ -109594,7 +109594,7 @@
 /obj/effect/decal/cleanable/dirt{
 	icon_state = "dirt-flat-1"
 	},
-/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Maintenance Hatch"
 	},
@@ -113134,7 +113134,7 @@
 /obj/machinery/door/airlock/maintenance{
 	name = "Abandoned Art Studio"
 	},
-/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -119197,7 +119197,7 @@
 /obj/machinery/door/airlock/command{
 	name = "Auxiliary E.V.A. Storage"
 	},
-/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/access/all/command/eva,
