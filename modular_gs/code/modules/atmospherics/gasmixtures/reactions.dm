@@ -70,13 +70,13 @@
 	else if (temperature < 5000)
 		return NO_REACTION
 	else
-		reaction_efficiency = (temperature / 5000) - 1		// will equal 1 at 5 kelvin, and will linearly fall until 0 at 100k
+		reaction_efficiency = (temperature / 5000) - 1
 
 
 	var/old_heat_capacity = air.heat_capacity()
 
 	var/used_moles = min((reaction_efficiency * min(lipoifium[MOLES], bz[MOLES]) * 0.5), 10)
-	var/energy_released = used_moles * FIRE_CARBON_ENERGY_RELEASED / 2
+	var/consumed = used_moles * FIRE_CARBON_ENERGY_RELEASED / 2
 
 	ASSERT_GAS(/datum/gas/galbanium, air)
 	cached_gases[/datum/gas/galbanium][MOLES] += used_moles
@@ -84,6 +84,6 @@
 	cached_gases[/datum/gas/bz][MOLES] -= used_moles
 	var/new_heat_capacity = air.heat_capacity()
 	if(new_heat_capacity > MINIMUM_HEAT_CAPACITY)
-		air.temperature = (max((temperature * old_heat_capacity - energy_released) / new_heat_capacity, TCMB))
+		air.temperature = (max((temperature * old_heat_capacity - consumed) / new_heat_capacity, TCMB))
 
 	return REACTING
