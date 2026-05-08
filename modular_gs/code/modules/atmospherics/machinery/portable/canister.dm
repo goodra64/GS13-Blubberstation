@@ -16,4 +16,4 @@
 	post_init_icon_state = ""
 	greyscale_config = /datum/greyscale_config/canister/hazard
 	greyscale_colors = "#E70C0C#630707"
-	gas_type = /datum/gas/lipoifium
+	gas_type = /datum/gas/galbanium
