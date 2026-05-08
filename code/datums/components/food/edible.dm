@@ -416,7 +416,7 @@ Behavior that's still missing from this component that original food items had t
 		else if(junkiness && eater.satiety < -150 && eater.nutrition > NUTRITION_LEVEL_STARVING + 50 && !HAS_TRAIT(eater, TRAIT_VORACIOUS) && !HAS_TRAIT(eater, TRAIT_GLUTTON)) //GS13 EDIT - Bluespace collar added else
 			to_chat(eater, span_warning("You don't feel like eating any more junk food at the moment!"))
 			return
-		else if(fullness > (1800 * (1 + eater.overeatduration / (4000 SECONDS)))) // The more you eat - the more you can eat //GS13 EDIT EAT MORE (replaces 600 with 1800)
+		else if(fullness > (FULLNESS_MAX * (1 + eater.overeatduration / (4000 SECONDS)))) // The more you eat - the more you can eat //GS13 EDIT EAT MORE (replaces 600 with FULLNESS_MAX)
 			if(HAS_TRAIT(eater, TRAIT_VORACIOUS) || HAS_TRAIT(eater, TRAIT_GLUTTON))
 				message_to_nearby_audience = span_notice("[eater] voraciously forces \the [parent] down [eater.p_their()] throat.")
 				message_to_consumer = span_notice("You voraciously force \the [parent] down your throat.")
@@ -455,7 +455,7 @@ Behavior that's still missing from this component that original food items had t
 			to_chat(feeder, span_warning("[eater] doesn't seem to have a mouth!"))
 			return
 		// if(fullness <= (600 * (1 + eater.overeatduration / (2000 SECONDS))) || HAS_TRAIT(eater, TRAIT_VORACIOUS))	// GS13 EDIT original for the change below
-		if(fullness <= (1800 * (1 + eater.overeatduration / (4000 SECONDS))) || HAS_TRAIT(eater, TRAIT_VORACIOUS))	// GS13 EDIT makes it so feeding others has the same eating limit as feeding ourselves.
+		if(fullness <= (FULLNESS_MAX * (1 + eater.overeatduration / (4000 SECONDS))) || HAS_TRAIT(eater, TRAIT_VORACIOUS))	// GS13 EDIT makes it so feeding others has the same eating limit as feeding ourselves.
 			eater.visible_message(
 				span_danger("[feeder] attempts to [eater.get_bodypart(BODY_ZONE_HEAD) ? "feed [eater] [parent]." : "stuff [parent] down [eater]'s throat hole! Gross."]"),
 				span_userdanger("[feeder] attempts to [eater.get_bodypart(BODY_ZONE_HEAD) ? "feed you [parent]." : "stuff [parent] down your throat hole! Gross."]")
@@ -503,7 +503,9 @@ Behavior that's still missing from this component that original food items had t
 		return FALSE
 	if(eater.satiety > -200)
 		eater.satiety -= junkiness
-	playsound(eater.loc,'sound/items/eatfood.ogg', rand(10,50), TRUE)
+	//GS13 EDIT
+	playsound(eater.loc,'sound/items/eatfood.ogg', rand(10,50), TRUE, volume_preference = /datum/preference/numeric/volume/sound_digestive)
+	//GS13 EDIT END
 	if(!owner.reagents.total_volume)
 		return
 	SEND_SIGNAL(eater, COMSIG_LIVING_EAT_FOOD, owner)
@@ -780,7 +782,9 @@ Behavior that's still missing from this component that original food items had t
 	if(foodtypes & edible_flags)
 		food.reagents.trans_to(eater, food.reagents.total_volume, transferred_by = eater)
 		eater.visible_message(span_warning("[eater] eats [food]!"), span_notice("You eat [food]."))
-		playsound(get_turf(eater),'sound/items/eatfood.ogg', rand(30,50), TRUE)
+		//GS13 EDIT
+		playsound(get_turf(eater),'sound/items/eatfood.ogg', rand(30,50), TRUE, volume_preference = /datum/preference/numeric/volume/sound_digestive)
+		//GS13 EDIT END
 		qdel(food)
 		return COMPONENT_ATOM_EATEN
 
