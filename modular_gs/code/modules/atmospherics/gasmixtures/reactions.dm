@@ -8,7 +8,7 @@
 	requirements = list(
 		"MAX_TEMP" = 100,
 		/datum/gas/plasma = MINIMUM_MOLE_COUNT,
-		/datum/gas/tritium = MINIMUM_MOLE_COUNT
+		/datum/gas/tritium = MINIMUM_MOLE_COUNT,
 	)
 
 /datum/gas_reaction/lipoifium_formation/react(datum/gas_mixture/air, datum/holder)
@@ -51,9 +51,9 @@
 
 /datum/gas_reaction/galbanium_formation/init_reqs()
 	requirements = list(
-		"MIN_TEMP" = 5000
+		"MIN_TEMP" = 5000,
 		/datum/gas/lipoifium = MINIMUM_MOLE_COUNT,
-		/datum/gas/bz = MINIMUM_MOLE_COUNT
+		/datum/gas/bz = MINIMUM_MOLE_COUNT,
 	)
 
 /datum/gas_reaction/galbanium_formation/react(datum/gas_mixture/air, datum/holder)
