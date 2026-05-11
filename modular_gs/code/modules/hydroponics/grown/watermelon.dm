@@ -12,7 +12,7 @@
 	icon_state = "seed-milkmelon"
 	growing_icon = 'modular_gs/icons/obj/hydroponics/growing.dmi'
 
-/obj/item/food/grown/watermelon/milkmelon
+/obj/item/food/grown/milkmelon
 	seed = /obj/item/seeds/watermelon/milkmelon
 	name = "milkmelon"
 	desc = "Those are some BIG honkers. A real set of badonkers."
@@ -21,11 +21,17 @@
 	icon_state = "milkmelon"
 	inhand_icon_state = "milkmelon"
 	juice_typepath = /datum/reagent/consumable/milk
-	wine_power = NULL
+	wine_power = null
 	wine_flavor = 10
+	bite_consumption_mod = 2
+	w_class = WEIGHT_CLASS_NORMAL
+	foodtypes = FRUIT
 
-/obj/item/food/grown/watermelon/milkmelon/make_processable()
+/obj/item/food/grown/milkmelon/make_processable()
 	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/milkmelonslice, 5, 20, screentip_verb = "Slice", sound_to_play = SFX_KNIFE_SLICE)
+
+/obj/item/food/grown/milkmelon/make_dryable()
+	return
 
 /obj/item/food/milkmelonslice
 	name = "milkmelon slice"
@@ -42,6 +48,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /datum/crafting_recipe/food/knife/milkmelonslice
-	reqs = list(/obj/item/seeds/watermelon/milkmelon = 1)
+	reqs = list(/obj/item/food/grown/milkmelon = 1)
 	result = /obj/item/food/milkmelonslice
 	category = CAT_SALAD
