@@ -11,6 +11,7 @@
 	icon = 'modular_gs/icons/obj/hydroponics/seeds.dmi'
 	icon_state = "seed-milkmelon"
 	growing_icon = 'modular_gs/icons/obj/hydroponics/growing.dmi'
+	icon_dead = null
 
 /obj/item/food/grown/milkmelon
 	seed = /obj/item/seeds/watermelon/milkmelon
@@ -18,8 +19,7 @@
 	desc = "Those are some BIG honkers. A real set of badonkers."
 	icon = 'modular_gs/icons/obj/hydroponics/harvest.dmi'
 	icon_state = "milkmelon"
-	icon_state = "milkmelon"
-	inhand_icon_state = "milkmelon"
+	inhand_icon_state = "watermelon"
 	juice_typepath = /datum/reagent/consumable/milk
 	wine_power = null
 	wine_flavor = 10
