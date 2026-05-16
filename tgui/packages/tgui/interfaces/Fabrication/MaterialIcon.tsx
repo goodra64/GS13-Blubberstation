@@ -103,6 +103,7 @@ export const MaterialIcon = (props: MaterialIconProps) => {
           ])}
         />
       ))}
+      x{materialName}
     </div>
   );
 };
