@@ -103,7 +103,6 @@ const MaterialCounter = (props: MaterialCounterProps) => {
           className="MaterialDock__Label"
         >
           <Flex.Item>
-            {material.name}
             <MaterialIcon materialName={material.name} sheets={sheets} />
           </Flex.Item>
           <Flex.Item>
