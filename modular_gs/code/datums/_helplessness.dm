@@ -39,11 +39,20 @@ ahhhh~! It's all documented too~ 🥵
 	SHOULD_NOT_OVERRIDE(TRUE)
 
 	if (sanity_checks(fatty) == FALSE)
+		disable_helplessness(fatty)
 		return FALSE
 	
 	var/trigger_weight = get_trigger_weight(fatty)
 
 	var/effective_fatness = fatty.calculate_effective_fatness()
+
+	if (trigger_weight <= 0)
+		disable_helplessness(fatty)
+		return FALSE
+	
+	if (effective_fatness < trigger_weight)
+		disable_helplessness(fatty)
+		return FALSE
 
 	return apply_helplessness(fatty, trigger_weight, effective_fatness)
 
@@ -94,33 +103,38 @@ ahhhh~! It's all documented too~ 🥵
 	return trigger_weight
 
 /**
- * Compares trigger weight and (effective) fatness, and applies/removes helplessness traits accordingly.
+ * Applies helplessness trait(s). Basically, if you're here, means that you can apply the trait
  * Override this for custom behaviour, adding/deleting multiple trait under one helplessness pref etc.
  * 
- * Returns FALSE when the trait is not applied/active.
+ * Returns FALSE if the trait was not applied.
  * 
- * Returns TRUE when the trais is applied/active.
+ * Returns TRUE if the trais was applied.
  */
 /datum/helplessness/proc/apply_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
 	PROTECTED_PROC(TRUE)
 
-	if (trigger_weight <= 0)
-		if (HAS_TRAIT_FROM(fatty, helplessness_trait, HELPLESSNESS_TRAIT))
-			REMOVE_TRAIT(fatty, helplessness_trait, HELPLESSNESS_TRAIT)
-		
-		return FALSE
-
 	if (!HAS_TRAIT_FROM(fatty, helplessness_trait, HELPLESSNESS_TRAIT))
-		if (fatness >= trigger_weight)
-			to_chat(fatty, span_warning(gain_message))
-			ADD_TRAIT(fatty, helplessness_trait, HELPLESSNESS_TRAIT)
-			return TRUE
+		to_chat(fatty, span_warning(gain_message))
+		ADD_TRAIT(fatty, helplessness_trait, HELPLESSNESS_TRAIT)
+		return TRUE
 		
-		return FALSE
-		
-	else if (fatness < trigger_weight)
+	return FALSE
+
+/**
+ * Disables the helplessness mechanics. Basically, if you're here, you know you have to remove the trait
+ * Override this if you need to do some cleanup of your own
+ * 
+ * returns TRUE if the trait was present and was removed
+ * 
+ * returns FALSE if the trait wasn't removed (because it wasn't there to begin with. You can use this behavior to speed up
+ * removing multiple traits since AFAIK a single if (bool) check is faster than looking up if you have trait X or not)
+ */
+/datum/helplessness/proc/disable_helplessness(mob/living/carbon/human/fatty)
+	PROTECTED_PROC(TRUE)
+
+	if (HAS_TRAIT_FROM(fatty, helplessness_trait, HELPLESSNESS_TRAIT))
 		to_chat(fatty, span_notice(lose_message))
 		REMOVE_TRAIT(fatty, helplessness_trait, HELPLESSNESS_TRAIT)
-		return FALSE
-	
-	return TRUE
+		return TRUE
+
+	return FALSE
