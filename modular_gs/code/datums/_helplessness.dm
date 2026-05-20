@@ -1,3 +1,4 @@
+GLOBAL_LIST_EMPTY_TYPED(helplessness_mechanics, /datum/helplessness)
 /**
  * A datum responsible for handling helplessness mechanics.
  * Check out [modular_gs/code/datums/helplessness/helplessness.dm] for examples on how to extend this
@@ -8,6 +9,7 @@
  * Or just tell me what a good little coder boy I am that'll make me happy too.
  */
 /datum/helplessness
+	abstract_type = /datum/helplessness
 	/// the helplessness mechanic this triggers
 	var/helplessness_trait = 0
 	/// default BFI value at which this triggers - essentially the value used by quirks
@@ -138,3 +140,8 @@ ahhhh~! It's all documented too~ 🥵
 		return TRUE
 
 	return FALSE
+
+/proc/populate_helplessness_mechanics()
+	for (var/helplessness_mechanic in subtypesof(/datum/helplessness))
+		var/datum/helplessness/helplessness_datum = new helplessness_mechanic
+		GLOB.helplessness_mechanics.Add(helplessness_datum)
