@@ -227,7 +227,7 @@
 
 	/// The statue we turn into.
 	/// We only ever make one (in New) and simply move it into nullspace or back.
-	var/obj/structure/statue/custom/silverscale/statue /// GS13 EDIT
+	var/obj/structure/statue/custom/statue
 
 /datum/action/cooldown/turn_to_statue/New(Target)
 	. = ..()
@@ -255,7 +255,6 @@
 
 	if(isnull(statue))
 		init_statue() // GS13 EDIT
-
 	if(owner.stat != CONSCIOUS)
 		if(feedback)
 			owner.balloon_alert(owner, "you're too weak!")
@@ -321,10 +320,10 @@
 
 	to_chat(carbon_owner, span_userdanger("Your existence as a living creature snaps as your statue form crumbles!"))
 	carbon_owner.forceMove(get_turf(statue))
-	carbon_owner.adjust_brute_loss(300) // GS13 EDIT
+	carbon_owner.adjust_brute_loss(300) // GS13 EDIT START
 	// carbon_owner.dust(just_ash = TRUE, drop_items = TRUE)
 	carbon_owner.investigate_log("has been killed from having their Silverscale Statue deconstructed / destroyed.", INVESTIGATE_DEATHS)
-
+	/// GS13 EDIT END
 	clean_up_statue() // unregister signal before we can do further side effects.
 
 /// Statue was qdeleted outright, do nothing but clear refs.

@@ -22,9 +22,6 @@
 	var/art_type = /datum/element/art
 	/// Set to true to prevent it from being carved out of a block
 	var/uncarveable = FALSE
-	/// GS13 EDIT START
-	var/should_marionette = TRUE
-	/// GS13 EDIT END
 
 /obj/structure/statue/Initialize(mapload)
 	. = ..()
@@ -633,7 +630,3 @@ Moving interrupts
 		. += content_ma
 
 #undef SCULPT_SOUND_INCREMENT
-
-/// GS13 EDIT
-/obj/structure/statue/custom/silverscale
-	should_marionette = FALSE
