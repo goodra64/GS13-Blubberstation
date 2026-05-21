@@ -28,6 +28,7 @@
 	AddElement(art_type, impressiveness)
 	AddElement(/datum/element/beauty, impressiveness * 75)
 	AddElement(/datum/element/simple_rotation)
+///	AddComponent(/datum/component/marionette)
 	if(should_marionette)/// GS13 EDIT
 		AddComponent(/datum/component/marionette) /// GS13 EDIT
 
