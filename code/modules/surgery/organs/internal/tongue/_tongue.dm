@@ -254,7 +254,8 @@
 		return FALSE
 
 	if(isnull(statue))
-///			if(feedback)
+		// GS13 EDIT START
+		// if(feedback)
 ///			owner.balloon_alert(owner, "you can't seem to statue-ize!")
 ///		return FALSE // permanently bricked
 		init_statue() // GS13 EDIT
@@ -288,7 +289,8 @@
 	if(is_statue)
 		statue.visible_message(span_danger("[statue] becomes animated!"))
 		owner.forceMove(get_turf(statue))
-///				statue.moveToNullspace()
+			// GS13 EDIT START
+			// statue.moveToNullspace()
 		qdel(statue) //GS13 EDIT
 		UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
 
@@ -324,9 +326,10 @@
 
 	to_chat(carbon_owner, span_userdanger("Your existence as a living creature snaps as your statue form crumbles!"))
 	carbon_owner.forceMove(get_turf(statue))
-///		carbon_owner.dust(just_ash = TRUE, drop_items = TRUE)
+	// GS13 EDIT START
+	// carbon_owner.dust(just_ash = TRUE, drop_items = TRUE)
 ///	carbon_owner.investigate_log("has been dusted from having their Silverscale Statue deconstructed / destroyed.", INVESTIGATE_DEATHS)
-	carbon_owner.adjust_brute_loss(300) // GS13 EDIT START
+	carbon_owner.adjust_brute_loss(300)
 	// carbon_owner.dust(just_ash = TRUE, drop_items = TRUE)
 	carbon_owner.investigate_log("has been killed from having their Silverscale Statue deconstructed / destroyed.", INVESTIGATE_DEATHS)
 	/// GS13 EDIT END
