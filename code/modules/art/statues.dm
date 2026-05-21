@@ -22,13 +22,17 @@
 	var/art_type = /datum/element/art
 	/// Set to true to prevent it from being carved out of a block
 	var/uncarveable = FALSE
+	/// GS13 EDIT START
+	var/should_marionette = TRUE
+	/// GS13 EDIT END
 
 /obj/structure/statue/Initialize(mapload)
 	. = ..()
 	AddElement(art_type, impressiveness)
 	AddElement(/datum/element/beauty, impressiveness * 75)
 	AddElement(/datum/element/simple_rotation)
-	AddComponent(/datum/component/marionette)
+	if(should_marionette)/// GS13 EDIT
+		AddComponent(/datum/component/marionette) /// GS13 EDIT
 
 /obj/structure/statue/wrench_act(mob/living/user, obj/item/tool)
 	. = ..()
@@ -629,3 +633,7 @@ Moving interrupts
 		. += content_ma
 
 #undef SCULPT_SOUND_INCREMENT
+
+/// GS13 EDIT
+/obj/structure/statue/custom/silverscale
+	should_marionette = FALSE

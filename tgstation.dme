@@ -7129,6 +7129,7 @@
 #include "modular_gs\code\modules\clothing\under\jobs\modular_items.dm"
 #include "modular_gs\code\modules\clothing\under\jobs\modular_clothing\button_up.dm"
 #include "modular_gs\code\modules\clothing\under\jobs\modular_clothing\dual_tone.dm"
+#include "modular_gs\code\modules\customization\modules\client\augment\organs.dm"
 #include "modular_gs\code\modules\customization\modules\mob\living\carbon\human\species\hemophage\hemophage_status_effects.dm"
 #include "modular_gs\code\modules\customization\species\proteans\organs\protean_stomach.dm"
 #include "modular_gs\code\modules\event_perk_redeemer\event_perk.dm"
